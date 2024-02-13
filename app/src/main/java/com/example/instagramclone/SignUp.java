@@ -6,18 +6,26 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.badge.BadgeUtils;
+import com.parse.FindCallback;
+import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.SaveCallback;
 import com.shashank.sony.fancytoastlib.FancyToast;
 
+import java.util.List;
+
 public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
-    private Button mButton;
+    private Button mButton, mButtonGetAllData;
     private EditText mEditTextName, mEditTextPunchPower, mEditTextPunchSpeed, mEditTextKickSpeed, mEditTextKickPower;
+    private TextView mTextViewGetData;
+    private String allObject2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +41,59 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
         mEditTextPunchSpeed = findViewById(R.id.editTextPunchSpeed);
         mEditTextKickPower = findViewById(R.id.editTextKickPower);
         mEditTextKickSpeed = findViewById(R.id.editTextKickSpeed);
+
+        mTextViewGetData = findViewById(R.id.textViewGetData);
+
+        mButtonGetAllData = findViewById(R.id.buttonGetAllData);
+
+        mTextViewGetData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ParseQuery<ParseObject> parseQuery = ParseQuery.getQuery("Object2");
+                parseQuery.getInBackground("QfMFRMEZzF", new GetCallback<ParseObject>() {
+                    @Override
+                    public void done(ParseObject object, ParseException e) {
+
+                        if (object != null && e == null) {
+
+                            mTextViewGetData.setText(object.get("name") + "");
+                        }
+                    }
+                });
+            }
+        });
+
+        mButtonGetAllData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ParseQuery<ParseObject> queryAll = ParseQuery.getQuery("Object2");
+                queryAll.findInBackground(new FindCallback<ParseObject>() {
+                    @Override
+                    public void done(List<ParseObject> objects, ParseException e) {
+
+                        if (e == null) {
+
+                            if (objects.size() > 0) {
+
+                                allObject2 = "";
+
+                                for (ParseObject Objects2 : objects) {
+
+                                    allObject2 = allObject2 + Objects2.get("name") + "\n";
+                                }
+
+                                FancyToast.makeText(SignUp.this, allObject2, FancyToast.LENGTH_LONG, FancyToast.SUCCESS, true).show();
+                            } else {
+
+                                FancyToast.makeText(SignUp.this, e.getMessage(), FancyToast.LENGTH_LONG, FancyToast.ERROR, true).show();
+                            }
+                        }
+                    }
+                });
+            }
+        });
 
     }
 
