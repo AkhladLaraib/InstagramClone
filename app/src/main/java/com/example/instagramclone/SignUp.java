@@ -57,9 +57,9 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
         if (v.getId() == R.id.buttonSignUp) {
 
-            if (mEditTextEnterEmail.getText().toString().equals("") ||
-                    mEditTextEnterUserName.getText().toString().equals("") ||
-                    mEditTextEnterPassword.getText().toString().equals("")) {
+            if (mEditTextEnterEmail.getText().toString().isEmpty() ||
+                    mEditTextEnterUserName.getText().toString().isEmpty() ||
+                    mEditTextEnterPassword.getText().toString().isEmpty()) {
 
                 FancyToast.makeText(SignUp.this, "Email, UserName and Password required", FancyToast.LENGTH_LONG,
                         FancyToast.INFO, true).show();

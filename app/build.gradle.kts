@@ -43,4 +43,5 @@ dependencies {
       implementation("com.github.parse-community.Parse-SDK-Android:parse:4.2.1")
 
       implementation("io.github.shashank02051997:FancyToast:2.0.2")
+
 }
