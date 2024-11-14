@@ -37,10 +37,10 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
         mEditTextEnterPassword.setOnKeyListener((v, keyCode, event) ->  {
 
-            if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN) {
-
+            if (keyCode == KeyEvent.KEYCODE_ENTER &&
+                    event.getAction() == KeyEvent.ACTION_DOWN)
                 onClick(mButtonSignUp);
-            }
+
             return false;
         });
 
@@ -104,8 +104,13 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
     public void rootLayoutTapped(View view) {
 
-        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-        inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        try {
+            InputMethodManager inputMethodManager =
+                    (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void transitionToSocialMediaActivity() {

@@ -18,8 +18,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".SocialMediaActivity"
-            android:exported="false" />
+            android:name=".SocialMediaActivity" />
         <activity
             android:name=".LoginActivity" />
         <activity

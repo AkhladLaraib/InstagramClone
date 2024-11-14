@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DBC3C3"
+    android:background="#8ED27B"
     android:onClick="rootLayoutTapped"
     tools:context=".SignUp">
 
@@ -73,7 +73,7 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="80dp"
-        android:backgroundTint="#730818"
+        android:backgroundTint="#2C7308"
         android:text="SIGNUP"
         android:textColor="@color/white"
         app:cornerRadius="10dp"
@@ -88,7 +88,7 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="80dp"
-        android:backgroundTint="#730818"
+        android:backgroundTint="#2C7308"
         android:text="LOGIN"
         android:textColor="@color/white"
         app:cornerRadius="10dp"

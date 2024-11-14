@@ -4,17 +4,18 @@ import static androidx.viewpager2.widget.ViewPager2.*;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 public class SocialMediaActivity extends AppCompatActivity {
 
-    private ViewPager2 viewPager;
-    private TabLayout tabLayout;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,43 +29,57 @@ public class SocialMediaActivity extends AppCompatActivity {
             Toolbar toolbar = findViewById(R.id.myToolbar);
             setSupportActionBar(toolbar);
 
-            viewPager = findViewById(R.id.viewPager);
-            tabLayout = findViewById(R.id.tabLayout);
-
-            TabAdapter tabAdapter = new TabAdapter(getSupportFragmentManager(), null, getTitle().toString());
+            ViewPager2 viewPager = findViewById(R.id.viewPager);
+            TabAdapter tabAdapter = new TabAdapter(getSupportFragmentManager(), getLifecycle());
             viewPager.setAdapter(tabAdapter);
+
+            TabLayout tabLayout = findViewById(R.id.tabLayout);
+            new TabLayoutMediator(tabLayout, viewPager,
+                    (tab, position) -> {
+                        switch (position) {
+                            case 0:
+                                tab.setText("PROFILE");
+                                break;
+                            case 1:
+                                tab.setText("USERS");
+                                break;
+                            case 2:
+                                tab.setText("SHARE PICTURES");
+                                break;
+                        }
+                    }).attach();
         } catch (NullPointerException e) {
 
             e.getMessage();
         }
 
 
-
-        tabLayout.addOnTabSelectedListener(new OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-
-                viewPager.setCurrentItem(tab.getPosition());
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
-
-        viewPager.registerOnPageChangeCallback(new OnPageChangeCallback() {
-            @Override
-            public void onPageSelected(int position) {
-
-                tabLayout.selectTab(tabLayout.getTabAt(position));
-            }
-        });
+//
+//        tabLayout.addOnTabSelectedListener(new OnTabSelectedListener() {
+//            @Override
+//            public void onTabSelected(TabLayout.Tab tab) {
+//
+//                viewPager.setCurrentItem(tab.getPosition());
+//            }
+//
+//            @Override
+//            public void onTabUnselected(TabLayout.Tab tab) {
+//
+//            }
+//
+//            @Override
+//            public void onTabReselected(TabLayout.Tab tab) {
+//
+//            }
+//        });
+//
+//        viewPager.registerOnPageChangeCallback(new OnPageChangeCallback() {
+//            @Override
+//            public void onPageSelected(int position) {
+//
+//                tabLayout.selectTab(tabLayout.getTabAt(position));
+//            }
+//        });
 
 
     }
