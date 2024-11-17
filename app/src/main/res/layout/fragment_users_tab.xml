@@ -16,7 +16,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="356dp"
         android:background="#B0ACAC"
-        android:text="Loading Users...             Please Wait"
+        android:text="@string/loading_users_please_wait"
         android:textColor="#E5E0E0"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"

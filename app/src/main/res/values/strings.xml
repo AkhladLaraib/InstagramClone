@@ -2,4 +2,15 @@
     <string name="app_name">InstagramClone</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="share_image">SHARE IMAGE</string>
+    <string name="hint_image">Please enter the image description...</string>
+    <string name="hint_name">Please enter profile name...</string>
+    <string name="hint_bio">Please enter you bio...</string>
+    <string name="hint_profession">Please enter your profession...</string>
+    <string name="hint_hobbies">Please enter your hobbies...</string>
+    <string name="hint_favourite_sport">Please enter your favourite sport...</string>
+    <string name="update_info">Update Info</string>
+    <string name="loading_users_please_wait">Loading Users... Please Wait</string>
+    <string name="logout_user_item">Logout</string>
+    <string name="post_image">Post Image</string>
 </resources>
