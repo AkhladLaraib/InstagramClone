@@ -13,4 +13,9 @@
     <string name="loading_users_please_wait">Loading Users... Please Wait</string>
     <string name="logout_user_item">Logout</string>
     <string name="post_image">Post Image</string>
+    <string name="please_enter_an_email_address">Please enter an email address</string>
+    <string name="please_enter_a_password">Please enter a password</string>
+    <string name="signup">SIGNUP</string>
+    <string name="login">LOGIN</string>
+    <string name="please_enter_a_username">Please enter a username</string>
 </resources>

@@ -6,20 +6,26 @@
     android:layout_height="match_parent"
     android:background="#D3977F"
     android:onClick="loginLayoutTapped"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    tools:actionBarNavMode="standard">
+
+    <include
+        layout="@layout/my_toolbar" />
 
     <EditText
         android:id="@+id/editTextLoginEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="50dp"
+        android:layout_marginBottom="368dp"
         android:ems="10"
-        android:hint="Please enter an email address"
+        android:hint="@string/please_enter_an_email_address"
         android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewLogin" />
 
@@ -27,13 +33,12 @@
         android:id="@+id/imageViewLogin"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginStart="105dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="106dp"
-        android:background="#f8d9d9"
+        android:layout_marginStart="106dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="105dp"
+        android:background="#D3977F"
         android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/oldinsta2" />
@@ -46,10 +51,10 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="50dp"
         android:ems="10"
-        android:hint="Please enter a password"
+        android:hint="@string/please_enter_a_password"
         android:inputType="text|textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextLoginEmail" />
 
@@ -61,7 +66,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="80dp"
         android:backgroundTint="#730818"
-        android:text="SIGNUP"
+        android:text="@string/signup"
         android:textColor="@color/white"
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -74,10 +79,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="80dp"
         android:backgroundTint="#730818"
-        android:text="LOGIN"
+        android:text="@string/login"
         android:textColor="@color/white"
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
