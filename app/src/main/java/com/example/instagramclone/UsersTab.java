@@ -13,15 +13,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.parse.Parse;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
-import com.shashank.sony.fancytoastlib.FancyToast;
 
 import java.util.ArrayList;
 
 import libs.mjn.prettydialog.PrettyDialog;
-import libs.mjn.prettydialog.PrettyDialogCallback;
 
 public class UsersTab extends Fragment implements AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener {
 
